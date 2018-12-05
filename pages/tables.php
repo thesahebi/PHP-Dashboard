@@ -1,11 +1,11 @@
 <?php
     require('conn.php');
 
-    $result = $mysqli->query("SELECT * FROM `test`");
+    $result = $mysqli->query("SELECT * FROM `users`");
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $query1 = "delete from test where id='$id'";
+        $query1 = "delete from users where id='$id'";
         $result1 = mysqli_query($mysqli, $query1) or die("Not Deleted");
         header("location:tables.php");
     }
@@ -13,9 +13,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,13 +46,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -64,7 +59,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.php">BasketAsia SDN BHD</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -75,9 +70,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="#">
+                            
+                        <a href="#">
                                 <div>
-                                    <strong>John Smith</strong>
+                                    <strong>Cash Payment </strong>
                                     <span class="pull-right text-muted">
                                         <em>Yesterday</em>
                                     </span>
@@ -85,6 +81,7 @@
                                 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
                             </a>
                         </li>
+                        
                         <li class="divider"></li>
                         <li>
                             <a href="#">
@@ -293,10 +290,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Analysis<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="flot.html">Flot Charts</a>
@@ -308,7 +305,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> User List</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
@@ -437,7 +434,7 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
+                                        <th>Full Name</th>
                                         <th>Email</th>
                                         <th>Address</th>
                                         <th>Phone</th>
@@ -449,9 +446,9 @@
                                 <?php
                                     while ($mem = mysqli_fetch_assoc($result)):
                                         echo '<tr>';
-                                        echo '<td>'.$mem['name'].'</td>';
+                                        echo '<td>'.$mem['full_name'].'</td>';
                                         echo '<td>'.$mem['email'].'</td>';
-                                        echo '<td>'.$mem['phone'].'</td>';
+                                        echo '<td>'.$mem['mobile'].'</td>';
                                         echo '<td>'.$mem['address'].'</td>';
                                         echo '<td>';
                                         if($mem['status'] == 'Active'){

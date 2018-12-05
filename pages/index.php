@@ -1,23 +1,23 @@
 <?php
     require('conn.php');
 
-    $query = "select count(*) from test";
-    $result = mysqli_query($mysqli, $query) or die("invalid");
+    $query = "select count(*) from users";
+    $result = mysqli_query($mysqli, $query) or die("invalid 1");
     $row = mysqli_fetch_array($result);
     $total = $row[0];
 
-    $query0 = "select count(*) from test where status='Active'";
-    $result0 = mysqli_query($mysqli, $query0) or die("invalid");
+    $query0 = "select count(*) from users where status='Active'";
+    $result0 = mysqli_query($mysqli, $query0) or die("invalid 2");
     $row0 = mysqli_fetch_array($result0);
     $total0 = $row0[0];
 
-    $query1 = "select count(*) from test where status='Suspend'";
-    $result1 = mysqli_query($mysqli, $query1) or die("invalid");
+    $query1 = "select count(*) from users where status='Suspend'";
+    $result1 = mysqli_query($mysqli, $query1) or die("invalid 3");
     $row1 = mysqli_fetch_array($result1);
     $total1 = $row1[0];
 
-    $query2 = "select count(*) from test where status='Terminate'";
-    $result2 = mysqli_query($mysqli, $query2) or die("invalid");
+    $query2 = "select count(*) from users where status='Terminate'";
+    $result2 = mysqli_query($mysqli, $query2) or die("invalid 4");
     $row2 = mysqli_fetch_array($result2);
     $total2 = $row2[0];
 ?>
@@ -26,7 +26,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +71,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">UltraBand Dashboard</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -304,7 +303,7 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> analysis<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="flot.html">Flot Charts</a>
@@ -316,10 +315,21 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Users List<span class="fa arrow"></span></a></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="tables.php">Active</a>
+                                </li>
+                                <li>
+                                    <a href="sudpended_users.php">Suspended</a>
+                                </li>
+                                <li>
+                                    <a href="terminated.php">Terminated</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Add New User</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -346,15 +356,36 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Apartment<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="permai_putera.php">Permai Putera</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="permai_putri.php">Permai Puteri</a>
                                 </li>
                                 <li>
+                                    <a href="permai_seri.php">Permai Seri</a>
+                                </li>
+                                <li>
+                                    <a href="permai_court_1.php">Permai Court One</a>
+                                </li>
+                                <li>
+                                    <a href="permai_court_2">Permai Court Two</a>
+                                </li>
+                                <li>
+                                    <a href="kojaya.php">Kojaya Condominiom</a>
+                                </li>
+                                <li>
+                                    <a href="dsuria.php">D'Suria Residency</a>
+                                </li>
+                                <li>
+                                    <a href="mcity.php">Mcity Jalan Ampang</a>
+                                </li>
+                                <li>
+                                    <a href="gcb.php">GCB Court</a>
+                                </li>
+                                <!--<li>
                                     <a href="#">Third Level <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
@@ -376,6 +407,10 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="technician.php"><i class="fa fa-sitemap fa-fw"></i> Technician Team</a>
+                            
+                        </li>
+                        <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -394,6 +429,7 @@
             <!-- /.navbar-static-side -->
         </nav>
 
+<!-- dashboard page -->
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -497,7 +533,7 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Report
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -527,7 +563,7 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Packages
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -549,75 +585,55 @@
                             </div>
                         </div>
                         <!-- /.panel-heading -->
+                    
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Date</th>
-                                                    <th>Time</th>
-                                                    <th>Amount</th>
+                                                    <th>Package</th>
+                                                    <th>Voice Call</th>
+                                                    <th>Data Quota</th>
+                                                    <th>Installation Fee</th>
+                                                    <th>Monthly Fee</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>3326</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>3:29 PM</td>
-                                                    <td>$321.33</td>
+                                                    <td>1</td>
+                                                    <td>30Mbps</td>
+                                                    <td>4 Cent</td>
+                                                    <td>Unlimited</td>
+                                                    <td>Free</td>
+                                                    <td>RM 130</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>3325</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>3:20 PM</td>
-                                                    <td>$234.34</td>
+                                                    <td>2</td>
+                                                    <td>60Mbps</td>
+                                                    <td>4 Cent</td>
+                                                    <td>Unlimited</td>
+                                                    <td>Free</td>
+                                                    <td>RM 200</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>3324</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>3:03 PM</td>
-                                                    <td>$724.17</td>
+                                                    <td>3</td>
+                                                    <td>100Mbps</td>
+                                                    <td>4 Cent</td>
+                                                    <td>Unlimited</td>
+                                                    <td>Free</td>
+                                                    <td>RM 300</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>3323</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>3:00 PM</td>
-                                                    <td>$23.71</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3322</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>2:49 PM</td>
-                                                    <td>$8345.23</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3321</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>2:23 PM</td>
-                                                    <td>$245.12</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3320</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>2:15 PM</td>
-                                                    <td>$5663.54</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3319</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>2:13 PM</td>
-                                                    <td>$943.45</td>
-                                                </tr>
+                                               
                                             </tbody>
                                         </table>
                                     </div>
                                     <!-- /.table-responsive -->
                                 </div>
                                 <!-- /.col-lg-4 (nested) -->
-                                <div class="col-lg-8">
+                               <!--  <div class="col-lg-8">
                                     <div id="morris-bar-chart"></div>
                                 </div>
                                 <!-- /.col-lg-8 (nested) -->
@@ -627,7 +643,7 @@
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
-                    <div class="panel panel-default">
+                   <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
                         </div>
@@ -639,12 +655,12 @@
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
-                                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
+                                            <h4 class="timeline-title">BasketAsia CIMB Account</h4>
+                                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> anytime User can transfer to</small>
                                             </p>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p>
+                                            <p>CIMB: 8002522896  BasketAsia Sdn Bhd</p>
                                         </div>
                                     </div>
                                 </li>
@@ -653,11 +669,10 @@
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                            <h4 class="timeline-title">Cash Payment</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem quibusdam, tenetur commodi provident cumque magni voluptatem libero, quis rerum. Fugiat esse debitis optio, tempore. Animi officiis alias, officia repellendus.</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae minus eaque facere.</p>
+                                            <p>if user request to pay cash then ask him to come to office from 10AM to 7PM incase if he can't come to office then call Mr.yazdan to confirm what time he can get the cash</p>
                                         </div>
                                     </div>
                                 </li>
@@ -666,20 +681,27 @@
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                            <h4 class="timeline-title">Proccess the problem</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.</p>
+                                            <p>When customer call to report a problems please take all the information correctly and send via email to technication team</p>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="timeline-inverted">
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                            <h4 class="timeline-title">Customer Service</h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates est quaerat asperiores sapiente, eligendi, nihil. Itaque quos, alias sapiente rerum quas odit! Aperiam officiis quidem delectus libero, omnis ut debitis!</p>
+                                            <p>If customer internet has issue <br/>
+                                            When that happen?<br/>
+                                            which website you cannot open?<br/>
+                                            which application is not working?<br/>
+                                            </p> 
+                                                
+                                                    
+                                            </p>
                                         </div>
                                     </div>
                                 </li>
@@ -688,7 +710,7 @@
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                            <h4 class="timeline-title">Backup Files</h4>
                                         </div>
                                         <div class="timeline-body">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minus modi quam ipsum alias at est molestiae excepturi delectus nesciunt, quibusdam debitis amet, beatae consequuntur impedit nulla qui! Laborum, atque.</p>
@@ -715,7 +737,7 @@
                                 <li>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                            <h4 class="timeline-title">Payment Process</h4>
                                         </div>
                                         <div class="timeline-body">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi fuga odio quibusdam. Iure expedita, incidunt unde quis nam! Quod, quisquam. Officia quam qui adipisci quas consequuntur nostrum sequi. Consequuntur, commodi.</p>
@@ -727,7 +749,7 @@
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                            <h4 class="timeline-title">New Customer</h4>
                                         </div>
                                         <div class="timeline-body">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt obcaecati, quaerat tempore officia voluptas debitis consectetur culpa amet, accusamus dolorum fugiat, animi dicta aperiam, enim incidunt quisquam maxime neque eaque.</p>
