@@ -1,7 +1,7 @@
 <?php
     require('conn.php');
 
-    $result = $mysqli->query("SELECT * FROM `users`");
+    $result = $mysqli->query("SELECT * FROM users");
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -20,34 +20,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
+    <title>User List</title>
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
     <!-- DataTables CSS -->
     <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-
     <!-- DataTables Responsive CSS -->
     <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
     <div id="wrapper">
         <!-- Navigation -->
@@ -70,8 +62,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            
-                        <a href="#">
+                           <a href="#">
                                 <div>
                                     <strong>Cash Payment </strong>
                                     <span class="pull-right text-muted">
@@ -434,31 +425,34 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
+                                        
+                                         <th>ID</th>
                                         <th>Full Name</th>
                                         <th>Email</th>
                                         <th>Address</th>
                                         <th>Phone</th>
                                         <th>Status</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php
                                     while ($mem = mysqli_fetch_assoc($result)):
                                         echo '<tr>';
+                                        echo '<td>'.$mem['id'].'</td>';
                                         echo '<td>'.$mem['full_name'].'</td>';
                                         echo '<td>'.$mem['email'].'</td>';
                                         echo '<td>'.$mem['mobile'].'</td>';
                                         echo '<td>'.$mem['address'].'</td>';
+                                        echo '<td>'.$mem['Status'].'</td>';
                                         echo '<td>';
-                                        if($mem['status'] == 'Active'){
-                                            echo '<span class="badge" style="background-color:#4dbd74;">'.$mem['status'].'</span>';
+                                        if($mem['Status'] == 'Active'){
+                                            echo '<span class="badge" style="background-color:#4dbd74;">'.$mem['Status'] .'</span>';
                                         }
-                                        else if($mem['status'] == 'Suspend'){
-                                            echo '<span class="badge" style="background-color:#ffc107;">'.$mem['status'].'</span>';
+                                        else if($mem['Status'] == 'Suspend'){
+                                            echo '<span class="badge" style="background-color:#ffc107;">'.$mem['Status'].'</span>';
                                         }
                                         else{
-                                            echo '<span class="badge" style="background-color:#f86c6b;">'.$mem['status'].'</span>';
+                                            echo '<span class="badge" style="background-color:#f86c6b;">'.$mem['Status'].'</span>';
                                         }
                                        echo '</td>';
                                         echo '<td>
@@ -475,8 +469,7 @@
                                     endwhile;
                                     /* free result set */
                                     $result->close();
-                                ?>
-                                    
+                                ?>  
                                 </tbody>
                             </table>
                             
@@ -520,7 +513,7 @@
         });
     });
     </script>
-
+<!-- edit user script -->
     <script>
     $('#exampleModal').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
@@ -542,7 +535,8 @@
                 }
             });
     })
-
+    </script>
+    <script>
     $('#view').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -564,7 +558,5 @@
             });
     })
 </script>
-
 </body>
-
 </html>
