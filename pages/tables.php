@@ -112,7 +112,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-tasks">
+                   <!-- <ul class="dropdown-menu dropdown-tasks">
                         <li>
                             <a href="#">
                                 <div>
@@ -191,7 +191,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-alerts">
+                    <!-- <ul class="dropdown-menu dropdown-alerts">
                         <li>
                             <a href="#">
                                 <div>
@@ -299,7 +299,7 @@
                             <a href="tables.php"><i class="fa fa-table fa-fw"></i> User List</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Add New User</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -409,7 +409,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tables</h1>
+                    <h1 class="page-header text-primary "> UltraBand</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -418,7 +418,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            List of Users
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -428,10 +428,11 @@
                                         
                                          <th>ID</th>
                                         <th>Full Name</th>
-                                        <th>Email</th>
+                                        <th>User Name</th>
+                                        <th>Mobile</th>
                                         <th>Address</th>
-                                        <th>Phone</th>
                                         <th>Status</th>
+                                        <th>Edit User Details</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -440,15 +441,15 @@
                                         echo '<tr>';
                                         echo '<td>'.$mem['id'].'</td>';
                                         echo '<td>'.$mem['full_name'].'</td>';
-                                        echo '<td>'.$mem['email'].'</td>';
+                                        echo '<td>'.$mem['login_id'].'</td>';
                                         echo '<td>'.$mem['mobile'].'</td>';
                                         echo '<td>'.$mem['address'].'</td>';
-                                        echo '<td>'.$mem['Status'].'</td>';
+                                        
                                         echo '<td>';
-                                        if($mem['Status'] == 'Active'){
+                                        if($mem['Status'] == 'active'){
                                             echo '<span class="badge" style="background-color:#4dbd74;">'.$mem['Status'] .'</span>';
                                         }
-                                        else if($mem['Status'] == 'Suspend'){
+                                        else if($mem['Status'] == 'suspended'){
                                             echo '<span class="badge" style="background-color:#ffc107;">'.$mem['Status'].'</span>';
                                         }
                                         else{

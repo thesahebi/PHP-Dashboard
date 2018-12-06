@@ -6,17 +6,17 @@
     $row = mysqli_fetch_array($result);
     $total = $row[0];
 
-    $query0 = "select count(*) from users where status='Active'";
+    $query0 = "select count(*) from users where Status='active'";
     $result0 = mysqli_query($mysqli, $query0) or die("invalid 2");
     $row0 = mysqli_fetch_array($result0);
     $total0 = $row0[0];
 
-    $query1 = "select count(*) from users where status='Suspend'";
+    $query1 = "select count(*) from users where Status='suspended'";
     $result1 = mysqli_query($mysqli, $query1) or die("invalid 3");
     $row1 = mysqli_fetch_array($result1);
     $total1 = $row1[0];
 
-    $query2 = "select count(*) from users where status='Terminate'";
+    $query2 = "select count(*) from users where Status='Terminate'";
     $result2 = mysqli_query($mysqli, $query2) or die("invalid 4");
     $row2 = mysqli_fetch_array($result2);
     $total2 = $row2[0];
@@ -26,6 +26,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -319,7 +320,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Add New User</a>
+                            <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Add New User</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>

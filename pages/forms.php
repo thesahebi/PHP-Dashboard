@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
+    <title>Add User</title>
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
-
 <body>
-
-    <div id="wrapper">
-
+  <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -45,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.php">BasketAsia SDN BHD</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -54,7 +42,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-messages">
+                 <!--    <ul class="dropdown-menu dropdown-messages">
                         <li>
                             <a href="#">
                                 <div>
@@ -101,11 +89,11 @@
                     <!-- /.dropdown-messages -->
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown">
+             <!--    <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-tasks">
+                  <!--   <ul class="dropdown-menu dropdown-tasks">
                         <li>
                             <a href="#">
                                 <div>
@@ -180,11 +168,11 @@
                     <!-- /.dropdown-tasks -->
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-alerts">
+                  <!--   <ul class="dropdown-menu dropdown-alerts">
                         <li>
                             <a href="#">
                                 <div>
@@ -274,10 +262,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Analysis<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="flot.html">Flot Charts</a>
@@ -289,10 +277,24 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Users List<span class="fa arrow"></span></a></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="tables.php">All</a>
+                                </li>
+                                <li>
+                                    <a href="tables.php">Active</a>
+                                </li>
+                                <li>
+                                    <a href="sudpended_users.php">Suspended</a>
+                                </li>
+                                <li>
+                                    <a href="terminated.php">Terminated</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Add New User</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -319,6 +321,36 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Apartment<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="permai_putera.php">Permai Putera</a>
+                                </li>
+                                <li>
+                                    <a href="permai_putri.php">Permai Puteri</a>
+                                </li>
+                                <li>
+                                    <a href="permai_seri.php">Permai Seri</a>
+                                </li>
+                                <li>
+                                    <a href="permai_court_1.php">Permai Court One</a>
+                                </li>
+                                <li>
+                                    <a href="permai_court_2">Permai Court Two</a>
+                                </li>
+                                <li>
+                                    <a href="kojaya.php">Kojaya Condominiom</a>
+                                </li>
+                                <li>
+                                    <a href="dsuria.php">D'Suria Residency</a>
+                                </li>
+                                <li>
+                                    <a href="mcity.php">Mcity Jalan Ampang</a>
+                                </li>
+                                <li>
+                                    <a href="gcb.php">GCB Court</a>
+                                </li>
+                      <!--  <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -349,6 +381,10 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="technician.php"><i class="fa fa-sitemap fa-fw"></i> Technician Team</a>
+                            
+                        </li>
+                        <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -370,7 +406,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Forms</h1>
+                    <h1 class="page-header">Add New User</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -379,117 +415,115 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Form Elements
+                        fillup the form
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    <form role="form" action="insert_customer_sql_process.php" method="post" >
                                         <div class="form-group">
-                                            <label>Text Input</label>
-                                            <input class="form-control">
-                                            <p class="help-block">Example block-level help text here.</p>
+                                            <label class="control-label">Full Name</label>
+						                    <input type="text" name="full_name" placeholder="Full name" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label>Text Input with Placeholder</label>
-                                            <input class="form-control" placeholder="Enter text">
+                                        <label class="control-label">IC Number</label>
+						                <input type="text" name="ic_number" placeholder="IC number" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label>Static Control</label>
-                                            <p class="form-control-static">email@example.com</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>File input</label>
-                                            <input type="file">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Text area</label>
-                                            <textarea class="form-control" rows="3"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Checkboxes</label>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">Checkbox 1
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">Checkbox 2
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="">Checkbox 3
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Inline Checkboxes</label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox">1
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox">2
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox">3
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Radio Buttons</label>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Inline Radio Buttons</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Selects</label>
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Multiple Selects</label>
-                                            <select multiple class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
-                                        <button type="reset" class="btn btn-default">Reset Button</button>
-                                    </form>
-                                </div>
+                           
+                                        <label class="control-label">Passport Number</label>
+                                        <input type="text" name="passport_number" placeholder="passport number" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Nationality</label>
+                                        <input type="text" name="netionality" placeholder="Nationality" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Gender</label>
+                                        <input type="radio" name="sex" value="Male" checked>Male
+                                        <input type="radio" name="sex" value="Female" checked>Female
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Occupation</label>
+                                        <input type="text" name="occupation" placeholder="Studen, UNHCR..." class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Telephone</label>
+                                        <input type="text" name="telephone" placeholder="03xxxxxxxx" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Mobile Number</label>
+                                        <input type="text" name="mobile" placeholder="0060xxxxxxx" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">E-mail</label>
+                                        <input type="text" name="email" placeholder="Email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Address</label>
+                                        <input type="text" name="address" placeholder="PPI-21-12 Permai ...." class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Post Code</label>
+                                        <input type="text" name="post_code" placeholder="68000" class="form-control">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="control-label">City</label>
+                                        <input type="text" name="city" placeholder="Kuala lumpur..." class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Billing Address</label>
+                                        <input type="text" name="billing" placeholder="PPA-21-10 Permai..." class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                    <label class="control-label">Copy of Passport or IC</label>
+                                    <input name="upload" class="form-control type="file">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Package</label>
+                                        <input type="radio" name="package" value="10Mb" checked>10Mb
+                                        <input type="radio" name="package" value="30Mb" >30Mb
+                                        <input type="radio" name="package" value="50Mb">50Mb
+                                        <input type="radio" name="package" value="100Mb">100Mb
+                                        <input type="radio" name="package" value="200Mb">200Mb
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Login ID</label>
+                                        <input type="text" name="login_id" placeholder="Username" class="form-control">	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Password</label>
+                                        <input type="password" name="password" placeholder="Password" class="form-control">	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Activation Date</label>
+                                        <input type="text" name="activation_date" placeholder="2018/12/11" class="form-control">	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Deposit</label>
+                                        <input type="text" name="deposit" placeholder="RM" class="form-control">	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Connection type</label>
+                                        <input type="radio" name="connection_type" value="point to point" checked>point to point
+                                        <input type="radio" name="connection_type" value="fiber" >fiber
+                                        <input type="radio" name="connection_type" value="cat5">cat5
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="control-label">Equitment</label>
+                                        <input type="text" name="equipment" placeholder="Mikrotik..." class="form-control">	
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Note</label>
+                                        <textarea type="text" name="remark" placeholder="Contract is for one year..." class="form-control"></textarea>
+                                    </div>    
+                                        <button type="submit" name="add" value="Add" class="btn btn-default">Submit</button>
+                                        <button type="reset" class="btn btn-default">Reset Entry</button>
+                                        </form>
+                                    </div>
+
                                 <!-- /.col-lg-6 (nested) -->
                                 <div class="col-lg-6">
                                     <h1>Disabled Form States</h1>
@@ -585,7 +619,5 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-
 </body>
-
 </html>
