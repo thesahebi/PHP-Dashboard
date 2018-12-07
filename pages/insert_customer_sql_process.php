@@ -16,7 +16,7 @@ if(isset($_POST['add'])){
     $post_code =        $_POST['post_code'];
     $city =             $_POST['city'];
     $billing =          $_POST['billing'];
-    $upload =           $_POST['upload'];
+   # $upload =           $_POST['upload'];
     $package =          $_POST['package'];
     $login_id =         $_POST['login_id'];
     $password =         $_POST['password'];
@@ -28,9 +28,9 @@ if(isset($_POST['add'])){
     $remark =           $_POST['remark'];
    
 $query = "INSERT INTO users (full_name, ic_number, passport_number, netionality, sex, occupation, telephone, mobile, email,
-                             address, post_code, city, billing, upload, package, login_id, password, activation_date, deposit, connection_type, equipment, remark) 
+                             address, post_code, city, billing, package, login_id, password, activation_date, deposit, connection_type, equipment, remark) 
                      VALUES ('$full_name','$ic_number','$passport_number','$netionality','$sex','$occupation','$telephone',
-                     '$mobile','$email', '$address','$post_code','$city','$billing','$upload','$package', '$login_id','$password',
+                     '$mobile','$email', '$address','$post_code','$city','$billing','$package', '$login_id','$password',
                      '$activation_date','$deposit','$connection_type','$equipment', '$remark')";
         
         if(mysqli_query($mysqli, $query)){
