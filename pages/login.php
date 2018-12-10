@@ -1,6 +1,7 @@
 <?php 
 require_once('conn.php');
 if(isset($_POST['login'])){
+    $id = $_POST['id'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $query = "SELECT * FROM `login` WHERE email='$email' and password='$password'";

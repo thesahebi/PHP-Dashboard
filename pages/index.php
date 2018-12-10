@@ -20,6 +20,8 @@
     $result2 = mysqli_query($mysqli, $query2) or die("invalid 4");
     $row2 = mysqli_fetch_array($result2);
     $total2 = $row2[0];
+    
+ 
 ?>
 <!-- dashboard page -->
         <div id="page-wrapper">
