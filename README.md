@@ -1,12 +1,5 @@
 # yuri ultraband
 
-## Getting Started
-
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git`
-* Fork the repo
-
 ## Using the Source Files
 
 After cloning the repo take a look at the `gulpfile.js` and check out the tasks available:
