@@ -1,11 +1,15 @@
-<?php  require_once('header.php'); ?>
 <?php 
     require_once('conn.php');
-    $query = "SELECT * FROM `technician`";
-    $result = mysqli_query($mysqli, $query) or die("invalid team");
+    require_once('header.php');
+    
+    
+    $query_new = "SELECT * FROM technician";
+    $result = mysqli_query($mysqli, $query_new) or die("invalid team");
     $row = mysqli_fetch_array($result);
-    $total = $row;
+    $total = $row[0];
+
 ?>
+
  <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -13,6 +17,7 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+           
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -43,12 +48,9 @@
                                         echo '<td>'.$mem['email'].'</td>';
                                         echo '<td>'.$mem['gpn'].'</td>';
                                         echo '</tr>';
+                                    
                                     endwhile;
                                     /* free result set */
                                     $result->close();
                                 ?>
-   
-
-
-
 <?php require_once('footer.php'); ?>

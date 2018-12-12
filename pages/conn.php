@@ -6,3 +6,5 @@ $database = "ultrabandsm";
 $mysqli = new mysqli('localhost', 'root', 'abcd@1234','ultrabandsm') or die("Invalid connection");
 ?>
 
+
+
