@@ -1,18 +1,26 @@
 <?php 
 require_once('conn.php');
+session_start();
 if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $email = stripslashes($email);
+    $password = stripslashes($password);
+    $email = mysqli_real_escape_string($mysqli, $_REQUEST['email']);
+    $password = mysqli_real_escape_string($mysqli, $_REQUEST['password']);
+
     $query = "SELECT * FROM `login` WHERE email='$email' and password='$password'";
     $result = mysqli_query($mysqli, $query) or die('Invalid user');
-    if(mysqli_num_rows($result)>0){
-        header("location: index.php");
+    $rows = mysqli_num_rows($result);
+    if ($rows == 1) {
+            $_SESSION['login_user']=$email; // Initializing Session
+            header("location: index.php");
     }else{
         $message = "Username and/or Password incorrect.\\nTry again.";
         echo "<script type='text/javascript'>alert('$message');</script>";
         //header("location:login.php");
     } 
-    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,5 +95,4 @@ if(isset($_POST['login'])){
     <script src="../dist/js/sb-admin-2.js"></script>
 
 </body>
-
 </html>

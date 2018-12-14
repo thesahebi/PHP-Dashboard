@@ -39,8 +39,13 @@
                     </button>
                     <a class="navbar-brand" href="index.html">BasketAsia SDN BHD</a>
                 </div>
+
             <!-- /.navbar-header -->
-             <ul class="nav navbar-top-links navbar-right">
+            <ul class="nav navbar-top-links navbar-right">
+            <!-- /.navbar-header session -->
+            <a class="navbar-brand" href=""><?php require('conn.php'); require('session.php'); ?>
+                    <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
+                    </a>
                 <!-- /.dropdown -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -56,7 +61,7 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-
+            
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
