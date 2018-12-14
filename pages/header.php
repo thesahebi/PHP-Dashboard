@@ -54,7 +54,7 @@
                         <ul class="dropdown-menu dropdown-user">
                             <li><a href="user_settings.php"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
                             <li class="divider"></li>
-                            <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                            <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>
