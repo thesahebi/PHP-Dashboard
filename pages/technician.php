@@ -2,6 +2,7 @@
     require_once('header.php');
     require_once('conn.php');
 
+    $no = 1;
     $sql = "SELECT * FROM technician";
     if($result=mysqli_query($mysqli, $sql)){
         if(mysqli_num_rows($result) > 0){
@@ -33,7 +34,8 @@
                                 <tbody>";
                 while($row = mysqli_fetch_array($result)){
                     echo"<tr>";
-                    echo "<td>" . $row['id'] . "</td>";
+                    echo "<td>" .  "$no" . "</td>";
+                    #echo "<td>" . $row['id'] . "</td>";
                     echo "<td>" . $row['full_name'] . "</td>";
                     echo "<td>" . $row['position'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
@@ -49,7 +51,9 @@
 
                    </td>";   
                     echo"</tr>";
+                    $no++;
                 }
+                
                 echo "</table";
                 mysqli_free_result($result);
 
