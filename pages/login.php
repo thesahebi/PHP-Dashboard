@@ -71,9 +71,10 @@ if(isset($_POST['login'])){
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <input type="submit" name="login" value="login" class="btn btn-default">
+                                <input class="btn btn-lg btn-success btn-block type="submit" name="login" value="login" class="btn btn-default">
+                                <a href="forgot_password.php" class="btn btn-lg btn-primary btn-block">Forgot Password</a> 
                                 </div>
-                                <!-- <a href="index.php" class="btn btn-lg btn-success btn-block">Login</a> -->
+                                 
                             </fieldset>
                         </form>
                     </div>
