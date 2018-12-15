@@ -56,13 +56,14 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             List of Users
+                            <a data-toggle="modal" data-target="#add" style="float:right"><i class="fa fa-user fa-plus"></i></a>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                         <th>ID</th>
+                                         <th width="70">ID</th>
                                         <th>Full Name</th>
                                         <th>User Name</th>
                                         <th>Mobile</th>
@@ -121,6 +122,146 @@
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
+
+<!-- Modal -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="memberModalLabel">Add User</h4>
+            </div>
+            <div class="modal-body">
+            <form role="form" action="insert_customer_sql_process.php" method="post" >
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Full Name</label>
+						                    <input type="text" name="full_name" placeholder="Full name" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                        <label class="control-label">IC Number</label>
+						                <input type="text" name="ic_number" placeholder="IC number" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                           
+                                        <label class="control-label">Passport Number</label>
+                                        <input type="text" name="passport_number" placeholder="passport number" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Nationality</label>
+                                        <input type="text" name="netionality" placeholder="Nationality" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                    <label class="control-label">Gender</label><br>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="Male" checked>Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="Female" checked>Female
+                                    </label>
+                                    </div>
+                                    <!-- <div class="form-group col-md-6">
+                                        <label class="control-label">Occupation</label>
+                                        <input type="text" name="occupation" placeholder="Studen, UNHCR..." class="form-control">
+                                    </div> -->
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Equitment</label>
+                                        <input type="text" name="equipment" placeholder="Mikrotik..." class="form-control">	
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Telephone</label>
+                                        <input type="text" name="telephone" placeholder="03xxxxxxxx" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Mobile Number</label>
+                                        <input type="text" name="mobile" placeholder="0060xxxxxxx" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">E-mail</label>
+                                        <input type="text" name="email" placeholder="Email" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Address</label>
+                                        <input type="text" name="address" placeholder="PPI-21-12 Permai ...." class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Post Code</label>
+                                        <input type="text" name="post_code" placeholder="68000" class="form-control">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">City</label>
+                                        <input type="text" name="city" placeholder="Kuala lumpur..." class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Billing Address</label>
+                                        <input type="text" name="billing" placeholder="PPA-21-10 Permai..." class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                    <label class="control-label">Copy of Passport or IC</label>
+                                    <input name="upload" class="form-control" type="file">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Login ID</label>
+                                        <input type="text" name="login_id" placeholder="Username" class="form-control">	
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Password</label>
+                                        <input type="password" name="password" placeholder="Password" class="form-control">	
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Activation Date</label>
+                                        <input type="text" name="activation_date" placeholder="2018/12/11" class="form-control">	
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Deposit</label>
+                                        <input type="text" name="deposit" placeholder="RM" class="form-control">	
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Package</label><br>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="package" value="10Mb" checked>10Mb
+                                        </label>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="package" value="30Mb" >30Mb
+                                        </label>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="package" value="50Mb">50Mb
+                                        </label>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="package" value="100Mb">100Mb
+                                        </label>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="package" value="200Mb">200Mb
+                                        </label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Connection type</label><br>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="connection_type" value="point to point" checked>point to point
+                                        </label>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="connection_type" value="fiber" >fiber
+                                        </label>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="connection_type" value="cat5">cat5
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-12">
+                                        <label class="control-label">Note</label>
+                                        <textarea type="text" name="remark" rows="5" placeholder="Contract is for one year..." class="form-control"></textarea>
+                                    </div> 
+                                    </div>
+                                    <div class="modal-footer" style="margin-right:15px;">   
+                                        <button type="submit" name="add" value="Add" class="btn btn-default">Submit</button>
+                                        <button type="reset" class="btn btn-default">Reset Entry</button>
+                                        </form>
+                                        </div> 
+        </div>
+    </div>
+</div>
+
 
     </div>
     <!-- /#wrapper -->
