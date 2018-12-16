@@ -1,3 +1,24 @@
+<?php
+session_start();
+if(isset($_SESSION['login_user'])){
+    require('conn.php');	
+    $email_session = $_SESSION['login_user'];
+    if (isset($_POST['submit'])) {
+    	$id2 = $_POST['id'];
+    	$email = $_POST['email'];
+    	$pass = $_POST['password'];
+		$mysqli->query("UPDATE login SET email='$email', password = '$pass' WHERE email='$email_session'"); 
+		header("location:index.php");
+    }
+    $members = $mysqli->query("SELECT * FROM login WHERE email='$email_session'");
+    $mem = mysqli_fetch_assoc($members);
+
+}
+else{
+    header("location:login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +44,12 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        .dataTables_filter{
+            margin-left:454px!important;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,8 +70,8 @@
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
             <!-- /.navbar-header session -->
-            <a class="navbar-brand" href=""><?php require('conn.php'); require('session.php'); ?>
-                    <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
+            <a class="navbar-brand" href="">
+                    <b id="welcome">Welcome : <i><?php echo $email_session; ?></i></b>
                     </a>
                 <!-- /.dropdown -->
                     <li class="dropdown">
@@ -52,7 +79,7 @@
                             <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="user_settings.php"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
+                            <li><a data-toggle="modal" data-target="#editProfile"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
                             <li class="divider"></li>
                             <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                         </ul>
@@ -82,7 +109,7 @@
                                 <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             
-                            <li>
+                            <!-- <li>
                                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> analysis<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
@@ -92,12 +119,12 @@
                                         <a href="morris.html">Morris.js Charts</a>
                                     </li>
                                 </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
+                                <!-- /.nav-second-level 
+                            </li> -->
                             
                             <li>
-                                <a href="tables.php"><i class="fa fa-table fa-fw"></i> Users List<span class="fa arrow"></span></a></a>
-                                <ul class="nav nav-third-level">
+                                <a href="tables.php"><i class="fa fa-table fa-fw"></i> Users List</a>
+                                <!-- <ul class="nav nav-third-level">
                                     <li>
                                         <a href="tables.php">All</a>
                                     </li>
@@ -110,16 +137,16 @@
                                     <li>
                                         <a href="terminated.php">Terminated</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                        
-                            <li>
+                            <!-- <li>
                                 <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Add New User</a>
-                            </li>
+                            </li> -->
                        
                             <li>
-                                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Apartment<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
+                                <a href="apartmentList.php"><i class="fa fa-sitemap fa-fw"></i> Apartment</a>
+                                <!-- <ul class="nav nav-second-level">
                                     <li>
                                         <a href="permai_putera.php">Permai Putera</a>
                                     </li>
@@ -147,7 +174,7 @@
                                     <li>
                                         <a href="gcb.php">GCB Court</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                                 <!-- /.nav-second-level -->
                             </li>
 
@@ -172,4 +199,34 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+
+        <!-- Modal -->
+<div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="memberModalLabel">Edit Profile</h4>
+            </div>
+                <form method="post" action="header.php" role="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" value="<?php echo $mem['email'];?>" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password"></label>
+                                <input type="text" class="form-control" id="password" name="password" value="<?php echo $mem['password'];?>" />
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Update" />&nbsp;
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                </form>
+
+        </div>
+    </div>
+</div>
+
         </div>

@@ -23,7 +23,7 @@
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th width="70">ID</th>
                                         <th>Full Name</th>
                                         <th>Username</th>
                                         <th>Email</th>
