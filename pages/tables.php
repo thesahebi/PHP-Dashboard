@@ -70,7 +70,11 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             List of Users
+<<<<<<< HEAD
                             <a data-toggle="modal" data-target="#add" style="float:right" ><i class="fa fa-user fa-plus"></i></a>
+=======
+                            <a data-toggle="modal" data-target="#add" style="float:right"><i class="fa fa-user fa-plus"></i></a>
+>>>>>>> origin
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -135,7 +139,11 @@
         </div>
         <!-- /#page-wrapper -->
 
+<<<<<<< HEAD
 <!-- Modal add User -->
+=======
+<!-- Modal -->
+>>>>>>> origin
 <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -274,6 +282,7 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <div class="modal fade" id="add-cash" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -283,6 +292,8 @@
             </div>
             <div class="modal-body">
             <form role="form" action="insert_customer_sql_process.php" method="post" >
+=======
+>>>>>>> origin
 
     </div>
     <!-- /#wrapper -->

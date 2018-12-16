@@ -63,7 +63,11 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
+<<<<<<< HEAD
                                          <th width="70">ID</th>
+=======
+                                        <th width="70">ID</th>
+>>>>>>> origin
                                         <th>Full Name</th>
                                         <th>User Name</th>
                                         <th>Mobile</th>
