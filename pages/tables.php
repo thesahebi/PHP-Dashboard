@@ -44,18 +44,20 @@
 </div>
 
 <!-- add cash button modal-->
-<div class="modal fade" id="add-cash" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="memberModalLabel">Add Payment</h4>
+                <h4 class="modal-title" id="memberModalLabel">Edit Payment Detail</h4>
             </div>
             <div class="dash">
+
             </div>
+
         </div>
     </div>
-</div>
+</div> -->
 <!-- End of add cash modal -->
         <div id="page-wrapper">
             <div class="row">
@@ -70,11 +72,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             List of Users
-<<<<<<< HEAD
                             <a data-toggle="modal" data-target="#add" style="float:right" ><i class="fa fa-user fa-plus"></i></a>
-=======
-                            <a data-toggle="modal" data-target="#add" style="float:right"><i class="fa fa-user fa-plus"></i></a>
->>>>>>> origin
+                           
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -116,7 +115,7 @@
                                                     <a class="btn btn-small btn-primary"data-toggle="modal" data-target="#exampleModal" data-whatever="'.$mem['id'].' "><i class="fa fa-edit"></i></a>
                                                     <a href="tables.php?id='.$mem['id'].'" class="btn btn-small btn-danger"><i class="fa fa-times"></i></a>
             
-                                                    <a data-toggle="modal" data-target="#add-cash" data-whatever="'.$mem['id'].' "class="btn btn-small btn-success"><i class="fa fa-plus"></i></a>
+                                                    <a data-toggle="modal" data-target="#payment" data-whatever="'.$mem['id'].' "class="btn btn-small btn-success"><i class="fa fa-plus"></i></a>
 
                                                     </td>';
                                         echo '</tr>';
@@ -139,11 +138,7 @@
         </div>
         <!-- /#page-wrapper -->
 
-<<<<<<< HEAD
 <!-- Modal add User -->
-=======
-<!-- Modal -->
->>>>>>> origin
 <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -281,21 +276,66 @@
         </div>
     </div>
 </div>
-
-<<<<<<< HEAD
-<div class="modal fade" id="add-cash" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+<!-- add payment method -->
+<div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
+    <div class="modal-content">
+    <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="memberModalLabel">Add Cash</h4>
+                <h4 class="modal-title" id="memberModalLabel">Add Payment</h4>
             </div>
             <div class="modal-body">
-            <form role="form" action="insert_customer_sql_process.php" method="post" >
-=======
->>>>>>> origin
-
-    </div>
+        <!-- panel preview -->
+                <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+                        <label for="concept" class="col-sm-3 control-label">Concept</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="concept" name="concept">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-sm-3 control-label">Description</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="description" name="description">
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label for="amount" class="col-sm-3 control-label">Amount</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="amount" name="amount">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="col-sm-3 control-label">Status</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="status" name="status">
+                                <option>Paid</option>
+                                <option>Unpaid</option>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label for="date" class="col-sm-3 control-label">Date</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="date" name="date">
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <div class="col-sm-12 text-right">
+                            <button type="button" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-plus"></span> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div> <!-- / panel preview -->
+        
+	</div>
+</div>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -380,5 +420,6 @@
             });
     })
 </script>
+
 </body>
 </html>
