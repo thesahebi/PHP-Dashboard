@@ -302,6 +302,7 @@
                         <label class="control-label">Method of Payment</label>
                         <input type="text" name="method" placeholder="CIMB/Cash" class="form-control">
                     </div>
+                    
                     <div class="form-group col-md-12">
                         <label class="control-label">Chose the Month</label><br>
                         <input type="radio" name="months" value="january" checked>january &nbsp

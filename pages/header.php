@@ -88,110 +88,48 @@ else{
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-            
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                            
                             <li class="sidebar-search">
                                 <div class="input-group custom-search-form">
                                     <input type="text" class="form-control" placeholder="Search...">
                                     <span class="input-group-btn">
                                     <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
+                                    <i class="fa fa-search"></i>
                                     </button>
                                     </span>
                                 </div>
                                 <!-- /input-group -->
                             </li>
-                            
                             <li>
                                 <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
-                            
-                            <!-- <li>
-                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> analysis<span class="fa arrow"></span></a>
+                            <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Users<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="flot.html">Flot Charts</a>
+                                     <a href="tables.php"><i class="fa fa-table fa-fw"></i> Users List</a>
                                     </li>
                                     <li>
-                                        <a href="morris.html">Morris.js Charts</a>
+                                        <a href="paymentDetails.php"><i class="fa fa-table fa-fw"></i> Users Payment</a>
                                     </li>
                                 </ul>
-                                <!-- /.nav-second-level 
-                            </li> -->
-                            
-                            <li>
-                                <a href="tables.php"><i class="fa fa-table fa-fw"></i> Users List</a>
-                                <!-- <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="tables.php">All</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables.php">Active</a>
-                                    </li>
-                                    <li>
-                                        <a href="sudpended_users.php">Suspended</a>
-                                    </li>
-                                    <li>
-                                        <a href="terminated.php">Terminated</a>
-                                    </li>
-                                </ul> -->
-                            </li>
-                            <li>
-                                <a href="paymentDetails.php"><i class="fa fa-table fa-fw"></i> Users Payment</a>
-                                </li>
-                            <!-- <li>
-                                <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Add New User</a>
-                            </li> -->
-                       
+                            </li> 
                             <li>
                                 <a href="apartmentList.php"><i class="fa fa-sitemap fa-fw"></i> Apartment</a>
-                                <!-- <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="permai_putera.php">Permai Putera</a>
-                                    </li>
-                                    <li>
-                                        <a href="permai_putri.php">Permai Puteri</a>
-                                    </li>
-                                    <li>
-                                        <a href="permai_seri.php">Permai Seri</a>
-                                    </li>
-                                    <li>
-                                        <a href="permai_court_1.php">Permai Court One</a>
-                                    </li>
-                                    <li>
-                                        <a href="permai_court_2">Permai Court Two</a>
-                                    </li>
-                                    <li>
-                                        <a href="kojaya.php">Kojaya Condominiom</a>
-                                    </li>
-                                    <li>
-                                        <a href="dsuria.php">D'Suria Residency</a>
-                                    </li>
-                                    <li>
-                                        <a href="mcity.php">Mcity Jalan Ampang</a>
-                                    </li>
-                                    <li>
-                                        <a href="gcb.php">GCB Court</a>
-                                    </li>
-                                </ul> -->
-                                <!-- /.nav-second-level -->
                             </li>
-
-                        <li>
-                            <a href="technician.php"><i class="fa fa-sitemap fa-fw"></i> Technician Team</a>
-                            
-                        </li>
-                    </ul>
-                </div>
+                            <li>
+                                <a href="technician.php"><i class="fa fa-sitemap fa-fw"></i> Technician Team</a>
+                            </li>
+                        </ul>
+                    </div>
                 <!-- /.sidebar-collapse -->
-            </div>
+                </div>
             <!-- /.navbar-static-side -->
-        </nav>
+            </nav>
 
-        <!-- Modal -->
+ <!-- Modal -->
 <div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
