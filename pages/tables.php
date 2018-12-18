@@ -281,52 +281,49 @@
     <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="memberModalLabel">Add Payment</h4>
-            </div>
-            <div class="modal-body">
-        <!-- panel preview -->
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="payment">Add Payment</h4>
+    </div>
+        <div class="modal-body">
+            <form role="form" action="addPayment.php" method="post" >
+            <div class="form-group col-md-6">
+                        <label class="control-label">ID</label>
+                        <input type="text" name="id" placeholder="<?php echo '1'; ?>" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Username</label>
+                        <input type="text" name="username" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Amount</label>
+                        <input type="text" name="amount" placeholder="Amount" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Method of Payment</label>
+                        <input type="text" name="method" placeholder="CIMB/Cash" class="form-control">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label">Chose the Month</label><br>
+                        <input type="radio" name="months" value="january" checked>january &nbsp
+                        <input type="radio" name="months" value="febuary" >febuary &nbsp
+                        <input type="radio" name="months" value="march" >March &nbsp
+                        <input type="radio" name="months" value="april" >April &nbsp
+                        <input type="radio" name="months" value="may" >May &nbsp
+                        <input type="radio" name="months" value="june" >june &nbsp
+                        <input type="radio" name="months" value="july" >July &nbsp
+                        <input type="radio" name="months" value="august" >August &nbsp
+                        <input type="radio" name="months" value="september" >September &nbsp
+                        <input type="radio" name="months" value="october" >October &nbsp
+                        <input type="radio" name="months" value="december" >December &nbsp
+                        </label>
+                </div>                    
+        
                 <div class="panel-body form-horizontal payment-form">
-                    <div class="form-group">
-                        <label for="concept" class="col-sm-3 control-label">Concept</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="concept" name="concept">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="description" class="col-sm-3 control-label">Description</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="description" name="description">
-                        </div>
-                    </div> 
-                    <div class="form-group">
-                        <label for="amount" class="col-sm-3 control-label">Amount</label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" id="amount" name="amount">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="status" class="col-sm-3 control-label">Status</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" id="status" name="status">
-                                <option>Paid</option>
-                                <option>Unpaid</option>
-                            </select>
-                        </div>
-                    </div> 
-                    <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">Date</label>
-                        <div class="col-sm-9">
-                            <input type="date" class="form-control" id="date" name="date">
-                        </div>
-                    </div>   
-                    <div class="form-group">
-                        <div class="col-sm-12 text-right">
-                            <button type="button" class="btn btn-default preview-add-button">
-                                <span class="glyphicon glyphicon-plus"></span> Add
-                            </button>
-                        </div>
-                    </div>
+                    
+                    <div class="modal-footer" style="margin-right:15px;">   
+                            <button type="submit" name="addPayment" value="addPayment" class="btn btn-default">Submit</button>
+                            <button type="reset" class="btn btn-default">Reset Entry</button>
+                        </form>
                 </div>
             </div>            
         </div> <!-- / panel preview -->

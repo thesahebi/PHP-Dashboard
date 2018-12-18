@@ -139,7 +139,9 @@ else{
                                     </li>
                                 </ul> -->
                             </li>
-                       
+                            <li>
+                                <a href="paymentDetails.php"><i class="fa fa-table fa-fw"></i> Users Payment</a>
+                                </li>
                             <!-- <li>
                                 <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Add New User</a>
                             </li> -->
@@ -182,17 +184,6 @@ else{
                             <a href="technician.php"><i class="fa fa-sitemap fa-fw"></i> Technician Team</a>
                             
                         </li>
-
-                            <li>
-                                <a href="#"><i class="fa fa-files-o fa-fw"></i> blank Pages<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                <li>
-                                <a href="blank.php">Blank Page</a>
-                                </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
-
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
