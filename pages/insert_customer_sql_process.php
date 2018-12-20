@@ -34,7 +34,7 @@ $query = "INSERT INTO users (full_name, ic_number, passport_number, netionality,
                      '$activation_date','$deposit','$connection_type','$equipment', '$remark')";
         
         if(mysqli_query($mysqli, $query)){
-            header("location: forms.php");
+            header("location: tables.php");
     
         } else{
             echo "ERROR: Could not able to execute $query. " . mysqli_error($mysqli);

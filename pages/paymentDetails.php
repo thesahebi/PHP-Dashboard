@@ -27,14 +27,15 @@
                                     <tr>
                                          <th width="70">ID</th>
                                         <th>username</th>
-                                        <th>Payment method</th>
-                                        <th>amount</th>
-                                        <th>Last Payment</th>
                                         <th>Activation date</th>
                                         <th>Mobile</th>
+                                        <th>amount</th>
+                                        <th>Payment</th>
+                                        <th>Payment method</th>
                                         <th>Email</th>
-                                        <th>Status</th>
                                         <th>Deposit</th>
+                                        <th>Status</th>
+                                        <th>Edit Payment</th>
                                         
                                     </tr>
                                 </thead>
@@ -44,14 +45,36 @@
                                         echo '<tr>';
                                         echo '<td>'.$mem['id'].'</td>';
                                         echo '<td>'.$mem['username'].'</td>';
-                                        echo '<td>'.$mem['method'].'</td>';
-                                        echo '<td>'.$mem['amount'].'</td>';
-                                        echo '<td>' .$mem['date'].'</td>';
                                         echo '<td>'.$mem['activation_date'].'</td>';
                                         echo '<td>'.$mem['mobile'].'</td>';
+                                        echo '<td>'.$mem['amount'].'</td>';
+                                        echo '<td>' .$mem['date'].'</td>';
+                                        echo '<td>'.$mem['method'].'</td>';
                                         echo '<td>'.$mem['email'].'</td>';
-                                        echo '<td>'.$mem['Status'].'</td>';
+                                        
                                         echo '<td>' .$mem['deposit'].'</td>';
+                                      
+                                        echo '<td>';
+                                        if($mem['Status'] == 'active'){
+                                            echo '<span class="badge" style="background-color:#4dbd74;">'.$mem['Status'] .'</span>';
+                                        }
+                                        else if($mem['Status'] == 'suspended'){
+                                            echo '<span class="badge" style="background-color:#ffc107;">'.$mem['Status'].'</span>';
+                                        }
+                                        else{
+                                            echo '<span class="badge" style="background-color:#f86c6b;">'.$mem['Status'].'</span>';
+                                        }
+                                       echo '</td>';
+                                        echo '<td>
+                                                    <a data-toggle="modal" data-target="#view" data-whatever="'.$mem['id'].' "
+                                                     class="btn btn-small btn-success"><i class="fa fa-search-plus"></i></a>
+                                                    <a class="btn btn-small btn-primary"
+                                                    data-toggle="modal"
+                                                    data-target="#exampleModal"
+                                                    data-whatever="'.$mem['id'].' "><i class="fa fa-edit"></i></a>
+                                                    <a href="tables.php?id='.$mem['id'].'" class="btn btn-small btn-danger"><i class="fa fa-times"></i></a>
+
+                                                </td>';
                                         echo '</tr>';
                                     endwhile;
                                     /* free result set */
