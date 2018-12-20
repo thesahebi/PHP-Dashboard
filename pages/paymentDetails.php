@@ -1,7 +1,7 @@
 <?php
   require('conn.php');
   require('header.php');
-  $result = $mysqli->query("SELECT * FROM Payment");
+  $result = $mysqli->query("SELECT * FROM `users` INNER JOIN payment ON users.login_id=payment.username");
   
 ?>
  <div id="page-wrapper">
@@ -17,8 +17,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Payment information
-                            <a data-toggle="modal" data-target="#add" style="float:right" ><i class="fa fa-user fa-plus"></i></a>
-                           
+                            <a data-toggle="modal" data-target="#payment" style="float:right"><i class="fa fa-user fa-plus"></i></a>
+                            
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -29,7 +29,12 @@
                                         <th>username</th>
                                         <th>Payment method</th>
                                         <th>amount</th>
-                                        <th>Date/Time</th>
+                                        <th>Last Payment</th>
+                                        <th>Activation date</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Deposit</th>
                                         
                                     </tr>
                                 </thead>
@@ -42,6 +47,11 @@
                                         echo '<td>'.$mem['method'].'</td>';
                                         echo '<td>'.$mem['amount'].'</td>';
                                         echo '<td>' .$mem['date'].'</td>';
+                                        echo '<td>'.$mem['activation_date'].'</td>';
+                                        echo '<td>'.$mem['mobile'].'</td>';
+                                        echo '<td>'.$mem['email'].'</td>';
+                                        echo '<td>'.$mem['Status'].'</td>';
+                                        echo '<td>' .$mem['deposit'].'</td>';
                                         echo '</tr>';
                                     endwhile;
                                     /* free result set */
@@ -61,3 +71,150 @@
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
+<!-- add payment method -->
+<div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="payment">Add Payment</h4>
+    </div>
+        <div class="modal-body">
+            <form role="form" action="addPayment.php" method="post" >
+            <div class="form-group col-md-6">
+                        <label class="control-label">ID</label>
+                        <input type="text" name="id" placeholder="<?php echo '1'; ?>" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Username</label>
+                        <input type="text" name="username" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Amount</label>
+                        <input type="text" name="amount" placeholder="Amount" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Method of Payment</label>
+                        <input type="text" name="method" placeholder="CIMB/Cash" class="form-control">
+                    </div>
+                    
+                    <div class="form-group col-md-12">
+                        <label class="control-label">Chose the Month</label><br>
+                        <input type="radio" name="months" value="january" checked>january &nbsp
+                        <input type="radio" name="months" value="febuary" >febuary &nbsp
+                        <input type="radio" name="months" value="march" >March &nbsp
+                        <input type="radio" name="months" value="april" >April &nbsp
+                        <input type="radio" name="months" value="may" >May &nbsp
+                        <input type="radio" name="months" value="june" >june &nbsp
+                        <input type="radio" name="months" value="july" >July &nbsp
+                        <input type="radio" name="months" value="august" >August &nbsp
+                        <input type="radio" name="months" value="september" >September &nbsp
+                        <input type="radio" name="months" value="october" >October &nbsp
+                        <input type="radio" name="months" value="december" >December &nbsp
+                        </label>
+                </div>                    
+        
+                <div class="panel-body form-horizontal payment-form">
+                    
+                    <div class="modal-footer" style="margin-right:15px;">   
+                            <button type="submit" name="addPayment" value="addPayment" class="btn btn-default">Submit</button>
+                            <button type="reset" class="btn btn-default">Reset Entry</button>
+                        </form>
+                </div>
+            </div>            
+        </div> <!-- / panel preview -->
+        
+	</div>
+</div>
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+      
+        $('#dataTables-example').DataTable({
+        responsive: true,
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'print'
+        ]
+    });
+    });
+    </script>
+   
+    <script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+
+            $.ajax({
+                type: "GET",
+                url: "editdata.php",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.dash').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+    </script>
+    <script>
+    $('#view').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+
+            $.ajax({
+                type: "GET",
+                url: "view.php",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.dash').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+</script>
+
+</body>
+</html>

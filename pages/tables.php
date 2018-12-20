@@ -43,22 +43,6 @@
     </div>
 </div>
 
-<!-- add cash button modal-->
-<!-- <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="memberModalLabel">Edit Payment Detail</h4>
-            </div>
-            <div class="dash">
-
-            </div>
-
-        </div>
-    </div>
-</div> -->
-<!-- End of add cash modal -->
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -115,7 +99,7 @@
                                                     <a class="btn btn-small btn-primary"data-toggle="modal" data-target="#exampleModal" data-whatever="'.$mem['id'].' "><i class="fa fa-edit"></i></a>
                                                     <a href="tables.php?id='.$mem['id'].'" class="btn btn-small btn-danger"><i class="fa fa-times"></i></a>
             
-                                                    <a data-toggle="modal" data-target="#payment" data-whatever="'.$mem['id'].' "class="btn btn-small btn-success"><i class="fa fa-plus"></i></a>
+                                                    
 
                                                     </td>';
                                         echo '</tr>';
@@ -277,60 +261,9 @@
     </div>
 </div>
 <!-- add payment method -->
-<div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="payment">Add Payment</h4>
-    </div>
-        <div class="modal-body">
-            <form role="form" action="addPayment.php" method="post" >
-            <div class="form-group col-md-6">
-                        <label class="control-label">ID</label>
-                        <input type="text" name="id" placeholder="<?php echo '1'; ?>" class="form-control">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Username</label>
-                        <input type="text" name="username" placeholder="Username" class="form-control">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Amount</label>
-                        <input type="text" name="amount" placeholder="Amount" class="form-control">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Method of Payment</label>
-                        <input type="text" name="method" placeholder="CIMB/Cash" class="form-control">
-                    </div>
-                    
-                    <div class="form-group col-md-12">
-                        <label class="control-label">Chose the Month</label><br>
-                        <input type="radio" name="months" value="january" checked>january &nbsp
-                        <input type="radio" name="months" value="febuary" >febuary &nbsp
-                        <input type="radio" name="months" value="march" >March &nbsp
-                        <input type="radio" name="months" value="april" >April &nbsp
-                        <input type="radio" name="months" value="may" >May &nbsp
-                        <input type="radio" name="months" value="june" >june &nbsp
-                        <input type="radio" name="months" value="july" >July &nbsp
-                        <input type="radio" name="months" value="august" >August &nbsp
-                        <input type="radio" name="months" value="september" >September &nbsp
-                        <input type="radio" name="months" value="october" >October &nbsp
-                        <input type="radio" name="months" value="december" >December &nbsp
-                        </label>
-                </div>                    
+
         
-                <div class="panel-body form-horizontal payment-form">
-                    
-                    <div class="modal-footer" style="margin-right:15px;">   
-                            <button type="submit" name="addPayment" value="addPayment" class="btn btn-default">Submit</button>
-                            <button type="reset" class="btn btn-default">Reset Entry</button>
-                        </form>
-                </div>
-            </div>            
-        </div> <!-- / panel preview -->
-        
-	</div>
-</div>
+	
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

@@ -10,7 +10,7 @@
 		$query = "INSERT INTO payment (username, amount, method, months) 
                     VALUES ('$username', '$amount', '$method', '$months')";
         if(mysqli_query($mysqli, $query)){
-            header("location: tables.php");
+            header("location: paymentDetails.php");
     
         } else{
             echo "ERROR: Could not able to execute $query " . mysqli_error($mysqli);

@@ -8,7 +8,7 @@ if(isset($_POST['add'])){
     $passport_number =  $_POST['passport_number'];
     $netionality =      $_POST['netionality'];
     $sex =              $_POST['sex'];
-    $occupation =       $_POST['occupation'];
+    #$occupation =       $_POST['occupation'];
     $telephone =        $_POST['telephone'];
     $mobile =           $_POST['mobile'];
     $email =            $_POST['email'];
@@ -27,9 +27,9 @@ if(isset($_POST['add'])){
     $equipment =        $_POST['equipment'];
     $remark =           $_POST['remark'];
    
-$query = "INSERT INTO users (full_name, ic_number, passport_number, netionality, sex, occupation, telephone, mobile, email,
+$query = "INSERT INTO users (full_name, ic_number, passport_number, netionality, sex, telephone, mobile, email,
                              address, post_code, city, billing, package, login_id, password, activation_date, deposit, connection_type, equipment, remark) 
-                     VALUES ('$full_name','$ic_number','$passport_number','$netionality','$sex','$occupation','$telephone',
+                     VALUES ('$full_name','$ic_number','$passport_number','$netionality','$sex','$telephone',
                      '$mobile','$email', '$address','$post_code','$city','$billing','$package', '$login_id','$password',
                      '$activation_date','$deposit','$connection_type','$equipment', '$remark')";
         
