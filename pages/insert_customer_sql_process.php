@@ -42,20 +42,18 @@ if(isset($_POST['add'])){
                                      VALUES ('$full_name','$ic_number','$passport_number','$netionality','$sex','$telephone','$mobile','$email',
                                               '$address','$post_code','$city','$billing','$uploadFile', '$package', '$login_id','$password','$activation_date',
                                               '$deposit','$connection_type','$equipment', '$remark')";
-                //echo "<script>alert('$id')</script>";
-                header("location: tables.php");
             }
             else{
                 echo "<script>alert('Please choose PDF files only');
                     window.location.href='tables.php' </script>";
                 } 
                    
-        // if(mysqli_query($mysqli, $query)){
-        //     header("location: tables.php");
+         if(mysqli_query($mysqli, $query)){
+             header("location: tables.php");
     
-        // } else{
-        //     echo "ERROR: Could not able to execute $query. " . mysqli_error($mysqli);
-        // }
+         } else{
+             echo "ERROR: Could not able to execute $query. " . mysqli_error($mysqli);
+         }
     }
         ?>
         

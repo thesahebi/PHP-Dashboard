@@ -10,7 +10,7 @@
 		$status = $_POST['Status'];
 		$mysqli->query("UPDATE users SET full_name='$full_name', mobile = '$mobile', address='$address', email='$email',
 		 Status='$status' WHERE id='$id2'"); 
-		header("location:tables.php");
+		header("location: tables.php");
     }
     $members = $mysqli->query("SELECT * FROM users WHERE id='$id'");
     $mem = mysqli_fetch_assoc($members);

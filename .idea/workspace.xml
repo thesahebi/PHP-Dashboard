@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84693254-799b-4e1f-af05-01eacbc42f92" name="Default Changelist" comment="added changes">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/yuri.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/editdata.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/editdata.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/insert_customer_sql_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/insert_customer_sql_process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/tables.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,13 +55,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="16" />
-          <entry key="php" value="184" />
+          <entry key="php" value="189" />
           <entry key="txt" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="146" />
+          <entry key="PHP" value="151" />
           <entry key="PLAIN_TEXT" value="51" />
           <entry key="SQL" value="38" />
           <entry key="Scratch" value="16" />
@@ -76,7 +71,7 @@
         <counts>
           <entry key="login" value="1" />
           <entry key="payment" value="1" />
-          <entry key="php" value="1" />
+          <entry key="php" value="2" />
           <entry key="register" value="1" />
           <entry key="sql" value="2" />
           <entry key="technician" value="1" />
@@ -87,7 +82,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="6" />
-          <entry key="PHP" value="1" />
+          <entry key="PHP" value="2" />
           <entry key="Scratch" value="2" />
         </counts>
       </usages-collector>
@@ -95,11 +90,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/insert_customer_sql_process.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+            <state relative-caret-position="609">
+              <caret line="43" column="102" selection-start-line="43" selection-start-column="102" selection-end-line="43" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/editdata.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -143,6 +147,7 @@
         <option value="$PROJECT_DIR$/pages/tables.php" />
         <option value="$PROJECT_DIR$/pages/login.php" />
         <option value="$PROJECT_DIR$/pages/insert_customer_sql_process.php" />
+        <option value="$PROJECT_DIR$/pages/editdata.php" />
       </list>
     </option>
   </component>
@@ -243,12 +248,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545382166234</updated>
       <workItem from="1545382168159" duration="364000" />
-      <workItem from="1545382658341" duration="5147000" />
+      <workItem from="1545382658341" duration="5759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5511000" />
+    <option name="totallyTimeSpent" value="6123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1766" height="1208" extended-state="6" />
@@ -270,7 +275,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3297975" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3297975" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -359,8 +364,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/insert_customer_sql_process.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        <state relative-caret-position="609">
+          <caret line="43" column="102" selection-start-line="43" selection-start-column="102" selection-end-line="43" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/editdata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
     </entry>
