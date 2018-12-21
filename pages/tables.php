@@ -94,7 +94,7 @@
                                        echo '</td>';
                                         echo '<td>
                                                     <a data-toggle="modal" data-target="#view" data-whatever="'.$mem['id'].' "class="btn btn-small btn-success"><i class="fa fa-search-plus"></i></a>
-                                                    <a class="btn btn-small btn-primary"data-toggle="modal" data-target="#exampleModal" data-whatever="'.$mem['id'].' "><i class="fa fa-edit"></i></a>
+                                                    <a class="btn btn-small btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$mem['id'].' "><i class="fa fa-edit"></i></a>
                                                     <a href="tables.php?id='.$mem['id'].'" class="btn btn-small btn-danger"><i class="fa fa-times"></i></a>
             
                                                     
@@ -129,7 +129,7 @@
                 <h4 class="modal-title" id="memberModalLabel">Add User</h4>
             </div>
             <div class="modal-body">
-            <form role="form" action="insert_customer_sql_process.php" method="post" >
+            <form role="form" action="insert_customer_sql_process.php" method="post"  enctype="multipart/form-data">
                                         <div class="form-group col-md-6">
                                             <label class="control-label">Full Name</label>
 						                    <input type="text" name="full_name" placeholder="Full name" class="form-control">
@@ -156,10 +156,6 @@
                                         <input type="radio" name="sex" value="Female" checked>Female
                                     </label>
                                     </div>
-                                    <!-- <div class="form-group col-md-6">
-                                        <label class="control-label">Occupation</label>
-                                        <input type="text" name="occupation" placeholder="Studen, UNHCR..." class="form-control">
-                                    </div> -->
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Equitment</label>
                                         <input type="text" name="equipment" placeholder="Mikrotik..." class="form-control">	
@@ -194,10 +190,9 @@
                                         <input type="text" name="billing" placeholder="PPA-21-10 Permai..." class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
-                                    <label class="control-label">Copy of Passport or IC</label>
-                                    <input name="upload" class="form-control" type="file">
+                                    <label class="control-label">Copy of Passport/IC</label>
+                                    <input  type="file" name="upload" class="form-control" >
                                     </div>
-                                    
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Login ID</label>
                                         <input type="text" name="login_id" placeholder="Username" class="form-control">	
@@ -253,7 +248,7 @@
                                     <div class="modal-footer" style="margin-right:15px;">   
                                         <button type="submit" name="add" value="Add" class="btn btn-default">Submit</button>
                                         <button type="reset" class="btn btn-default">Reset Entry</button>
-                                        </form>
+
                                         </div> 
         </div>
     </div>
@@ -263,7 +258,7 @@
         
 	
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- /#wrapper -->
 

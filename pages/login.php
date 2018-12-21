@@ -1,5 +1,7 @@
 <?php 
 require_once('conn.php');
+$username = $password = $confirm_password = "";
+$username_err = $password_err = $confirm_password_err = "";
 session_start();
 if(isset($_POST['login'])){
     $email = $_POST['email'];
