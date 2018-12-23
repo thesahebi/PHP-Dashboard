@@ -19,10 +19,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="memberModalLabel">Edit Member Detail</h4>
             </div>
-            <div class="dash">
-
-            </div>
-
+            <div class="dash"></div>
         </div>
     </div>
 </div>
@@ -35,14 +32,12 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="memberModalLabel">Edit Member Detail</h4>
             </div>
-            <div class="dash">
-
-            </div>
-
+            <div class="dash"></div>
         </div>
     </div>
 </div>
-
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<!--starting the main page nav-->
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -59,7 +54,7 @@
                             <a data-toggle="modal" data-target="#add" style="float:right" ><i class="fa fa-user fa-plus"></i></a>
                         </div>
                         <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover"   id="dataTables-example">
+                            <table  class="table table-striped table-bordered table-hover" id="dataTables-example" style="dataTables-example float right" >
                                 <thead>
                                     <tr>
                                          <th width="70">ID</th>
@@ -130,18 +125,18 @@
             </div>
             <div class="modal-body">
             <form role="form" action="insert_customer_sql_process.php" method="post"  enctype="multipart/form-data">
-                                        <div class="form-group col-md-6">
-                                            <label class="control-label">Full Name</label>
-						                    <input type="text" name="full_name" placeholder="Full name" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label">Full Name</label>
+                                        <input type="text" name="full_name" placeholder="Full name" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
                                         <label class="control-label">IC Number</label>
-						                <input type="text" name="ic_number" placeholder="IC number" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                           
-                                        <label class="control-label">Passport Number</label>
-                                        <input type="text" name="passport_number" placeholder="passport number" class="form-control">
+                                        <input type="text" name="ic_number" placeholder="IC number" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+
+                                    <label class="control-label">Passport Number</label>
+                                    <input type="text" name="passport_number" placeholder="passport number" class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Nationality</label>
@@ -255,39 +250,26 @@
 </div>
 <!-- add payment method -->
 
-        
-	
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="../dist/js/sb-admin-2.js"></script>
     <script>
     $(document).ready(function() {
-      
+
         $('#dataTables-example').DataTable({
+
         responsive: true,
         dom: 'Bfrtip',
         buttons: [
@@ -296,6 +278,7 @@
             'csvHtml5',
             'print'
         ]
+
     });
     });
     </script>

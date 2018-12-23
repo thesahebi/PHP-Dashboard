@@ -10,7 +10,7 @@ if(isset($_SESSION['login_user'])){
 		$mysqli->query("UPDATE login SET email='$email', password = '$pass' WHERE email='$email_session'"); 
 		header("location:index.php");
     }
-    $members = $mysqli->query("SELECT * FROM login WHERE email='$email_session'");
+    $members = $mysqli->query("SELECT * FROM registeradmin WHERE username='$email_session'");
     $mem = mysqli_fetch_assoc($members);
 
 }
@@ -28,6 +28,7 @@ else{
     <meta name="description" content="">
     <meta name="author" content="">
     <title>UltraBand</title>
+
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
@@ -47,7 +48,8 @@ else{
 
     <style>
         .dataTables_filter{
-            margin-left:454px!important;
+            float: right;
+            margin-top: -25px !important;
         }
     </style>
 </head>
