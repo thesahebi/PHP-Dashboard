@@ -1,27 +1,28 @@
 <?php 
-require_once('conn.php');
+
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 session_start();
 if(isset($_POST['login'])){
-    $email = $_POST['email'];
+    require_once('conn.php');
+    $username = $_POST['username'];
     $password = $_POST['password'];
-    $email = stripslashes($email);
+    $username = stripslashes($username);
     $password = stripslashes($password);
-    $email = mysqli_real_escape_string($mysqli, $_REQUEST['email']);
+    $username = mysqli_real_escape_string($mysqli, $_REQUEST['username']);
     $password = mysqli_real_escape_string($mysqli, $_REQUEST['password']);
 
-    $query = "SELECT * FROM `login` WHERE email='$email' and password='$password'";
+    $query = "SELECT * FROM `registeradmin` WHERE username='$username' and password='$password'";
     $result = mysqli_query($mysqli, $query) or die('Invalid user');
     $rows = mysqli_num_rows($result);
     if ($rows == 1) {
-            $_SESSION['login_user']=$email; // Initializing Session
+            $_SESSION['login_user']=$username; // Initializing Session
             header("location: index.php");
     }else{
         $message = "Username and/or Password incorrect.\\nTry again.";
         echo "<script type='text/javascript'>alert('$message');</script>";
         //header("location:login.php");
-    } 
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -61,7 +62,7 @@ if(isset($_POST['login'])){
                             <fieldset>
                                 <div class="form-group" >
                                 <label for="email" class="label--lighter">Username</label>
-                                    <input class="form-control" name="email" type="text"   value="" placeholder="email" autofocus="">
+                                    <input class="form-control" name="username" type="text"   value="" placeholder="Username" autofocus="">
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="label--lighter">Password</label>
@@ -74,7 +75,8 @@ if(isset($_POST['login'])){
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" name="login" value="login" class="btn btn-lg btn-success btn-block">
-                                </div>
+                                <a href="registerAdmin.php" class="btn btn-lg btn-success btn-block">Register</a>
+                                 </div>
                                 <!-- <a href="index.php" class="btn btn-lg btn-success btn-block">Login</a> -->
                             </fieldset>
                         </form>
