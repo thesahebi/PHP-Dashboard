@@ -5,20 +5,18 @@
   
 ?>
  <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
+     <div class="row">
+            <div class="col-lg-12">
                     <h1 class="page-header text-primary "> UltraBand</h1>
-                </div>
-                <!-- /.col-lg-12 -->
+            </div>  <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
+     <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Payment information
                             <a data-toggle="modal" data-target="#payment" style="float:right"><i class="fa fa-user fa-plus"></i></a>
-                            
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -36,7 +34,6 @@
                                         <th>Deposit</th>
                                         <th>Status</th>
                                         <th>Edit Payment</th>
-                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,9 +48,7 @@
                                         echo '<td>' .$mem['date'].'</td>';
                                         echo '<td>'.$mem['method'].'</td>';
                                         echo '<td>'.$mem['email'].'</td>';
-                                        
                                         echo '<td>' .$mem['deposit'].'</td>';
-                                      
                                         echo '<td>';
                                         if($mem['Status'] == 'active'){
                                             echo '<span class="badge" style="background-color:#4dbd74;">'.$mem['Status'] .'</span>';
@@ -64,7 +59,7 @@
                                         else{
                                             echo '<span class="badge" style="background-color:#f86c6b;">'.$mem['Status'].'</span>';
                                         }
-                                       echo '</td>';
+                                        echo '</td>';
                                         echo '<td>
                                                     <a data-toggle="modal" data-target="#view" data-whatever="'.$mem['id'].' "
                                                      class="btn btn-small btn-success"><i class="fa fa-search-plus"></i></a>
@@ -74,7 +69,7 @@
                                                     data-whatever="'.$mem['id'].' "><i class="fa fa-edit"></i></a>
                                                     <a href="tables.php?id='.$mem['id'].'" class="btn btn-small btn-danger"><i class="fa fa-times"></i></a>
 
-                                                </td>';
+                                              </td>';
                                         echo '</tr>';
                                     endwhile;
                                     /* free result set */
@@ -82,18 +77,12 @@
                                 ?>  
                                 </tbody>
                             </table>
-                            
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
+                     </div> <!-- /.panel-body -->
+                </div><!-- /.panel -->
+            </div> <!-- /.col-lg-12 -->
+      </div> <!-- /.row -->
+ </div> <!-- /#page-wrapper -->
+
 <!-- add payment method -->
 <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -104,7 +93,7 @@
     </div>
         <div class="modal-body">
             <form role="form" action="addPayment.php" method="post" >
-            <div class="form-group col-md-6">
+                    <div class="form-group col-md-6">
                         <label class="control-label">ID</label>
                         <input type="text" name="id" placeholder="<?php echo '1'; ?>" class="form-control">
                     </div>
@@ -120,7 +109,6 @@
                         <label class="control-label">Method of Payment</label>
                         <input type="text" name="method" placeholder="CIMB/Cash" class="form-control">
                     </div>
-                    
                     <div class="form-group col-md-12">
                         <label class="control-label">Chose the Month</label><br>
                         <input type="radio" name="months" value="january" checked>january &nbsp
@@ -135,23 +123,22 @@
                         <input type="radio" name="months" value="october" >October &nbsp
                         <input type="radio" name="months" value="december" >December &nbsp
                         </label>
-                </div>                    
-        
-                <div class="panel-body form-horizontal payment-form">
-                    
+                    </div>
+                    <div class="panel-body form-horizontal payment-form">
                     <div class="modal-footer" style="margin-right:15px;">   
                             <button type="submit" name="addPayment" value="addPayment" class="btn btn-default">Submit</button>
                             <button type="reset" class="btn btn-default">Reset Entry</button>
-                        </form>
-                </div>
-            </div>            
+                    </div>
+                    </div>
+            </form>
         </div> <!-- / panel preview -->
-        
-	</div>
+
+
+    </div>
 </div>
 
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- /#wrapper -->
