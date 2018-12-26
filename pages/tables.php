@@ -1,7 +1,7 @@
 <?php
     require('conn.php');
     require('header.php');
-    $result = $mysqli->query("SELECT * FROM users");
+    $result = $mysqli->query("SELECT * FROM users order by activation_date ASC");
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -62,6 +62,7 @@
                                         <th>User Name</th>
                                         <th>Mobile</th>
                                         <th>Address</th>
+                                        <th>Activtion Date</th>
                                         <th>Status</th>
                                         <th>Edit User Details</th>
                                     </tr>
@@ -75,7 +76,7 @@
                                         echo '<td>'.$mem['login_id'].'</td>';
                                         echo '<td>'.$mem['mobile'].'</td>';
                                         echo '<td>'.$mem['address'].'</td>';
-                                        
+                                        echo '<td>'.$mem['activation_date'].'</td>';
                                         echo '<td>';
                                         if($mem['Status'] == 'active'){
                                             echo '<span class="badge" style="background-color:#4dbd74;">'.$mem['Status'] .'</span>';

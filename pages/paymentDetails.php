@@ -1,7 +1,7 @@
 <?php
   require('conn.php');
   require('header.php');
-  $result = $mysqli->query("SELECT * FROM `users` INNER JOIN payment ON users.login_id=payment.username");
+  $result = $mysqli->query("SELECT * FROM `users` INNER JOIN payment ON users.login_id=payment.username ORDER BY date DESC ");
   
 ?>
  <div id="page-wrapper">
@@ -28,7 +28,7 @@
                                         <th>Activation date</th>
                                         <th>Mobile</th>
                                         <th>amount</th>
-                                        <th>Payment</th>
+                                        <th>Latest Payment</th>
                                         <th>Payment method</th>
                                         <th>Email</th>
                                         <th>Deposit</th>
